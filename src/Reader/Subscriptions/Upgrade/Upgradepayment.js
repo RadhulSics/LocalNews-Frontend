@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import icon from "../../Assets/payment.jpg"
+import icon from "../../../Assets/payment.jpg"
 import { useNavigate, useParams } from 'react-router-dom';
-import axiosInstance from '../../BaseUrl';
+import axiosInstance from '../../../BaseUrl';
 
-function Payment() {
+function Upgradepayment() {
     const {id}=useParams()
     const readerId=localStorage.getItem("readerid")
     console.log(id);
@@ -57,11 +57,11 @@ function Payment() {
         }
     
         axiosInstance
-          .post(`createSubscription`, form)
+          .post(`upgradeSubscription`, form)
           .then((res) => {
             console.log(res);
             if (res.data.status === 200) {
-              alert("Payment successfully processed");
+              alert("Upgraded successfully");
               navigate("/readerhome")
             } else {
               alert(res.data.message);
@@ -72,7 +72,7 @@ function Payment() {
           });
 
 
-      };
+        }
   return (
     <div className="container-xxl py-5">
     <div className="container ">
@@ -240,8 +240,7 @@ function Payment() {
  
 
   </div>
-  
   )
 }
 
-export default Payment
+export default Upgradepayment

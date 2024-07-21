@@ -115,7 +115,7 @@ function Adminsidebar() {
         <div className="admin_profile_sidebar_account_info">
           <div className="d-flex mt-2">
             <i class="ri-mail-volume-line admin_profile_sidebar_icons"></i>
-            <p> Subscriptions Plans</p>
+            <p> Subscription Plans</p>
           </div>
 
           <div className="mt-2">
@@ -124,6 +124,20 @@ function Adminsidebar() {
           </div>
         </div>
         </Link> 
+        <Link to='/viewsubscribers' >
+        <div className="admin_profile_sidebar_account_info">
+          <div className="d-flex mt-2">
+            <i class="ri-group-fill admin_profile_sidebar_icons"></i>
+            <p>View Subscribers</p>
+          </div>
+
+          <div className="mt-2">
+            <i class="ri-arrow-right-s-line admin_profile_sidebar_icons"></i>
+            <p></p>
+          </div>
+        </div>
+        </Link> 
+
         {/* <Link to='' >
         <div className="admin_profile_sidebar_account_info">
           <div className="d-flex mt-2">

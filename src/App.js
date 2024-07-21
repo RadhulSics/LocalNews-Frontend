@@ -77,6 +77,8 @@ import Viewsingleadvertiserreq from "./Admin/Viewsingleadvertiserreq";
 import Addsubscription from "./Admin/Addsubscription";
 import Viewsubscription from "./Admin/Viewsubscription";
 import Payment from "./Reader/Subscriptions/Payment";
+import Upgradepayment from "./Reader/Subscriptions/Upgrade/Upgradepayment";
+import Checknewscontent from "./Moderator/Ml/Checknewscontent";
 
 function App() {
   //local
@@ -129,6 +131,8 @@ function App() {
           <Route path="/reader-viewsubscriptionplans" element={[<Readernavafterlogin/>,<Readerprofile data='reader-viewsubscriptionplans'/>,<Footer/>]}/>
           <Route path="/reader-payment/:id" element={[<Readernavafterlogin/>,<Payment/>,<Footer/>]}/>
           <Route path="/reader-viewsubscribedplan" element={[<Readernavafterlogin/>,<Readerprofile data='reader-viewsubscribedplan'/>,<Footer/>]}/>
+          <Route path="/reader-upgradeplan" element={[<Readernavafterlogin/>,<Readerprofile data='reader-upgradeplan'/>,<Footer/>]}/>
+          <Route path="/reader-upgradepayment/:id" element={[<Readernavafterlogin/>,<Upgradepayment/>,<Footer/>]}/>
 
           { /*Contributor*/}
           <Route path="/contributorsignup" element={<Contributorsignup />} />
@@ -179,6 +183,7 @@ function App() {
           <Route path="/singlerequest/:id" element={[<Advertiserloginnav />,<Viewsinglereport url={url}/>,<Footer/>]}/>
           <Route path="/contributerrequest" element={[<Advertiserloginnav />,<Moderatormain data='contributerrequest'/>,<Footer/>]}/>
           <Route path="/viewsinglecontributer/:id" element={[<Advertiserloginnav />,<Moderatormain data='viewsinglecontributer'/>,<Footer/>]}/>
+          <Route path="/checknewscontent" element={<Checknewscontent/>}/>
 
 
 
@@ -202,6 +207,7 @@ function App() {
           <Route path="/addsubscription" element={[<Advertiserloginnav />,<Adminhome data='addsubscription'/>,<Footer/>]}/>
           <Route path="/viewsubscription" element={[<Advertiserloginnav />,<Adminhome data='viewsubscription'/>,<Footer/>]}/>
           <Route path="/Viewsingleadvertiserreq/:id" element={[<Advertiserloginnav />,<Viewsingleadvertiserreq url={url}/>,<Footer/>]}/>
+          <Route path="/viewsubscribers" element={[<Advertiserloginnav />,<Adminhome data='viewsubscribers'/>,<Footer/>]}/>
 
 
           {/* <Route path="/addsubscription" element={[<Advertiserloginnav />,<Addsubscription/>,<Footer/>]}/> */}

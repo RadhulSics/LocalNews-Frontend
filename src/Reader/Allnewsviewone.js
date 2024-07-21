@@ -26,16 +26,12 @@ function Allnewsviewone({ url }) {
   const handleMenuModalClose = () => {
     setShowMenuModal(false);
   };
-  // const [showComments, setShowComments] = useState(false);
-  // const handleCommentsButtonClick = () => {
-  //     setShowComments(true);
-  // };
   const [showComments, setShowComments] = useState(false);
   const handleCommentsButtonClick = () => {
     setShowComments(!showComments); // Toggle the state
   };
   const readerIds = localStorage.getItem("readerid");
-  console.log(readerIds + "hello readreid");
+  // console.log(readerIds + "hello readreid");
 
   // useEffect(()=>{
   //     axiosInstance.post(`viewnewsById/${id.id}`, {
@@ -62,13 +58,13 @@ function Allnewsviewone({ url }) {
           readerid: readerIds,
         })
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           setdata(res.data.data);
           setlike(res.data);
           setInitialFetchDone(true); // Mark initial fetch as done
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
         });
     }
   }, [initialFetchDone, id.id, readerIds]);
@@ -79,19 +75,19 @@ function Allnewsviewone({ url }) {
     axiosInstance
       .post(`viewalladds`)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setLatestAdds(res.data.msg);
         // console.log(res.data.msg);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   }, []);
 
   // const latestAdd =
   //   latestAdds.length > 0 ? latestAdds[latestAdds.length - 1] : null;
 
-  console.log(data);
+  // console.log(data);
   const dateTime = new Date(data.date);
   const timeString = dateTime.toLocaleTimeString();
 
@@ -119,12 +115,30 @@ function Allnewsviewone({ url }) {
           setlike({ ...like, liked: true, likecount: like.likecount + 1 });
         }
       } else {
-        console.error(response.data);
+        // console.error(response.data);
       }
     } catch (error) {
-      console.error("Error:", error);
+      // console.error("Error:", error);
     }
   };
+
+
+  //subscription functionality
+  const rid = localStorage.getItem("readerid");
+  console.log(rid);
+  const [subscribtion,setSubscription]=useState({})
+  
+  useEffect(() => {
+    axiosInstance
+      .post(`getSubscriptionByReaderId/${rid}`)
+      .then((result) => {
+        console.log((result) , " subscription details");
+        setSubscription(result.data.data)
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, [rid]);
 
   return (
     <div className="container reader_viewone" style={{ margin: "30px" }}>
@@ -147,6 +161,7 @@ function Allnewsviewone({ url }) {
           />
         </div>
         <div className="col-1">
+        {(subscribtion.planId === "299" || subscribtion.planId === "499") && (
           <img
             src={imgopt}
             alt="option img"
@@ -154,6 +169,7 @@ function Allnewsviewone({ url }) {
             height="40px"
             onClick={handleLoginButtonClick}
           />
+        )}
         </div>
       </div>
       <div className="row  reader_viewone-title">
@@ -179,6 +195,7 @@ function Allnewsviewone({ url }) {
               <br />
             </div>
           )} */}
+          {!subscribtion.planId && (
 <div
   id="carouselExampleInterval"
   className="carousel slide"
@@ -219,6 +236,7 @@ function Allnewsviewone({ url }) {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
+          )}
 
           {data.subcontent}
         </p>

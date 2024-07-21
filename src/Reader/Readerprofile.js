@@ -9,6 +9,7 @@ import Readreabout from './Readreabout'
 import Savednews from './Savednews'
 import Viewsubscriptionplans from './Subscriptions/Viewsubscriptionplans'
 import Viewmysubscribedplan from './Subscriptions/Viewmysubscribedplan'
+import Upgradeplans from './Subscriptions/Upgrade/Upgradeplans'
 
 function Readerprofile({data}) {
   const url = "http://localhost:4004";
@@ -34,6 +35,8 @@ function Readerprofile({data}) {
           <Viewsubscriptionplans url={url}/>
         ):data=='reader-viewsubscribedplan' ?(
           <Viewmysubscribedplan url={url}/>
+        ):data=='reader-upgradeplan' ?(
+          <Upgradeplans url={url}/>
         ):
         ''}
     </div>

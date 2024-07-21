@@ -13,6 +13,7 @@ import Adminviewsinglecontributer from './Adminviewsinglecontributer'
 import Adminaddrequest from './Adminaddrequest'
 import Addsubscription from './Addsubscription'
 import Viewsubscription from './Viewsubscription'
+import Viewsubscribers from './Viewsubscription/Viewsubscribers'
 const url = "http://localhost:4004";
 // const url="http://hybrid.srishticampus.in:4003/"
 
@@ -44,8 +45,11 @@ function Adminhome({data}) {
           <Addsubscription/>
         ):data=='viewsubscription'?(
           <Viewsubscription/>
+        ):data=='viewsubscribers'?(
+          <Viewsubscribers/>
         )
-        :"" }
+        :
+        "" }
     </div>
   )
 }
