@@ -51,7 +51,7 @@ const deletefn=((_id)=>{
                         <h4>Account Info</h4>
                         
                         <div className='reader_profile_account_info_details row' >
-                            <div className='col-7  reader_profile_account_info_fulldetails ' >
+                            <div className='col-10  reader_profile_account_info_fulldetails ' >
                                 <div className='reader_profile_account_info_fulldetails_box mb-3' >
                                     <p>First Name</p>
                                     <p>{data.firstname}</p>
@@ -101,9 +101,9 @@ const deletefn=((_id)=>{
                                 </div>
 
                             </div>
-                               <div className='col-5'>
+                               {/* <div className='col-5'>
                                     <img src={img} alt="image" className='admin_viewuser_image'/>
-                               </div>
+                               </div> */}
                         
                         </div>
 

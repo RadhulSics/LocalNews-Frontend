@@ -13,10 +13,10 @@ function Readernavonlogin() {
             </a>
 
 
-            <form class="d-flex ms-5 user_nav_Search">
+            {/* <form class="d-flex ms-5 user_nav_Search">
               <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search" />
 
-            </form>
+            </form> */}
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -27,7 +27,7 @@ function Readernavonlogin() {
               <ul class="navbar-nav nav nav-underline  ms-5 mb-2 mb-lg-0 user_nav_margin"  style={{ fontFamily:"inherit",fontWeight: 'bold' ,color:"black" }}>
 
 
-                <li class="nav-item">
+                {/* <li class="nav-item">
                   <a class="nav-link " href="/" >Home</a>
                 </li>
                 <li class="nav-item">
@@ -35,7 +35,7 @@ function Readernavonlogin() {
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Sports</a>
-                </li>
+                </li> */}
                 {/* <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,9 +48,9 @@ function Readernavonlogin() {
                     <li><a class="dropdown-item" href="#">Russia</a></li>
                   </ul>
                 </li> */}
-                <li class="nav-item">
+                {/* <li class="nav-item">
                   <a class="nav-link" href="#">Others</a>
-                </li>
+                </li> */}
 
                 {/* <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

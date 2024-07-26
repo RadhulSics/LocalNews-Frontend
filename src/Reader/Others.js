@@ -73,9 +73,9 @@ const location=useLocation()
               ) : (
                 
                 <div>
-                  
+{/*                   
                   <button type='button' className={`ri-thumb-up-line ${isLiked ? 'liked' : ''}`} ></button>
-                  <button type='button' className={`ri-thumb-down-line ${isDisliked ? 'disliked' : ''}`} ></button>
+                  <button type='button' className={`ri-thumb-down-line ${isDisliked ? 'disliked' : ''}`} ></button> */}
                 </div>
               )}
               <div className='like-dislike-buttons'>
